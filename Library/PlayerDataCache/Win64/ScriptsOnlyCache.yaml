@@ -3,10 +3,12 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Battery
     - BorneScript
+    - ButtonScript
     - CableManager
     - CameraScript
     - ComponentButtonScript
     - LampScript
+    - NewBehaviourScript
     - UselessScript
     Unity.PlasticSCM.Editor.dll:
     - Unity.PlasticSCM.Editor.PlasticWindow
@@ -139,35 +141,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3832}
+      Script: {instanceID: 3536}
     - Class: 114
-      Script: {instanceID: 3916}
+      Script: {instanceID: 3834}
     - Class: 114
-      Script: {instanceID: 4006}
+      Script: {instanceID: 3918}
     - Class: 114
-      Script: {instanceID: 4064}
+      Script: {instanceID: 4008}
     - Class: 114
-      Script: {instanceID: 4312}
+      Script: {instanceID: 4066}
     - Class: 114
-      Script: {instanceID: 4998}
+      Script: {instanceID: 4314}
     - Class: 114
-      Script: {instanceID: 5536}
+      Script: {instanceID: 4596}
     - Class: 114
-      Script: {instanceID: 5684}
+      Script: {instanceID: 5002}
     - Class: 114
-      Script: {instanceID: 5996}
+      Script: {instanceID: 5540}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5688}
     - Class: 114
-      Script: {instanceID: 6798}
+      Script: {instanceID: 6000}
     - Class: 114
-      Script: {instanceID: 6982}
+      Script: {instanceID: 6378}
     - Class: 114
-      Script: {instanceID: 7028}
+      Script: {instanceID: 6802}
     - Class: 114
-      Script: {instanceID: 7516}
+      Script: {instanceID: 6986}
     - Class: 114
-      Script: {instanceID: 7648}
+      Script: {instanceID: 7032}
+    - Class: 114
+      Script: {instanceID: 7520}
+    - Class: 114
+      Script: {instanceID: 7652}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -503,6 +509,12 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 9c37accf8c48954db6f109a3623986a4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NewBehaviourScript
+  - hash:
+      serializedVersion: 2
       Hash: f6831ac80ec81c5d5b370c0ed0fee997
     assemblyName: Unity.VisualScripting.Flow
     namespaceName: Unity.VisualScripting
@@ -527,7 +539,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: b09635b935ac0e0ca01b3796b3d2d37a
+      Hash: 9c37accf8c48954db6f109a3623986a4
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: UselessScript
@@ -615,6 +627,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerClickMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ButtonScript
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -851,7 +869,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 59546cfbb003cb21451306fcd93b1960
+      Hash: 3fc041b4843c9e87a33f67051256535a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Battery
@@ -959,7 +977,7 @@ ScriptsOnlyBuild:
     className: UnityOnMoveMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 30df7f3f0cc129a06a009ddac82275ae
+      Hash: 93af11ab0d0576d6d377ed24fd90cf39
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: LampScript
@@ -1062,4 +1080,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Prototype 2.unity
-  playerPath: C:/Users/totol/OneDrive/Documents/Electric/Build/Electric.exe
+  playerPath: C:/Users/totol/Downloads/ComputerGamesFinal/Build/Electric.exe
