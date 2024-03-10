@@ -16,12 +16,6 @@ public class ComponentButtonScript : MonoBehaviour
         button.onClick.AddListener(NewObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void NewObject()
     {
         Instantiate(component, cam.transform.position + new Vector3(0,0,20), new Quaternion());

@@ -10,8 +10,8 @@ public class CableManager : MonoBehaviour
 {
     private GameObject point=  null;
     public GameObject cablePrefab;
-    private List<GameObject> cables = new List<GameObject>();
-    private List<(GameObject, int)> bornes = new List<(GameObject, int)>();
+    private List<GameObject> cables = new();
+    private List<(GameObject, int)> bornes = new();
     public int nbGroupes = 0;
     
     public void AddPoint(GameObject obj)
@@ -88,10 +88,9 @@ public class CableManager : MonoBehaviour
     {
         foreach (var obj in bornes)
             obj.Item1.transform.parent.gameObject.GetComponent<CompoScript>().Deactivate();
-        HashSet<GameObject> seen = new HashSet<GameObject>();
 
-        Dictionary<int, List<(CompoScript, int)>> paths = new Dictionary<int, List<(CompoScript, int)>>();
-        HashSet<(int, int, CompoScript)> power = new HashSet<(int, int, CompoScript)>();
+        Dictionary<int, List<(CompoScript, int)>> paths = new();
+        HashSet<(int, int, CompoScript)> power = new();
         for (int i = 0; i < bornes.Count; i++)
         {
             GameObject a = bornes[i].Item1.transform.parent.gameObject;
@@ -106,7 +105,7 @@ public class CableManager : MonoBehaviour
                     else
                     {
                         int k = bornes[i].Item2, l = bornes[j].Item2;
-                        if (bornes[i].Item1.name.Equals("BorneP")) { int t = k; k = l; l = t; }
+                        if (bornes[i].Item1.name.Equals("BorneP")) (l, k) = (k, l);
                         if (b.isPower) power.Add((k, l, b));
                         else
                         {
