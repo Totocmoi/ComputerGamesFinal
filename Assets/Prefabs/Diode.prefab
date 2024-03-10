@@ -419,7 +419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPower: 0
-  isSenseSensitive: 1
+  blockMtoP: 1
+  blockPtoM: 0
 --- !u!1 &6132749222881146965
 GameObject:
   m_ObjectHideFlags: 0

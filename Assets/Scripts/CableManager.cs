@@ -80,44 +80,54 @@ public class CableManager : MonoBehaviour
             point = null;
 
             // Activate or disactivate everything
-            HashSet<GameObject> seen = new HashSet<GameObject>();
+            UpdateElectricThings();
+        }
+    }
 
-            Dictionary<int,List<(CompoScript, int)>> paths = new Dictionary<int, List<(CompoScript, int)>>();
-            HashSet<(int,int, CompoScript)> power = new HashSet<(int, int, CompoScript)> ();
-            for (int i = 0; i < bornes.Count; i++)
-            {
-                GameObject a = bornes[i].Item1.transform.parent.gameObject;
-                for (int j = i + 1; j < bornes.Count; j++)
-                    if (a.Equals(bornes[j].Item1.transform.parent.gameObject))
+    public void UpdateElectricThings()
+    {
+        foreach (var obj in bornes)
+            obj.Item1.transform.parent.gameObject.GetComponent<CompoScript>().Deactivate();
+        HashSet<GameObject> seen = new HashSet<GameObject>();
+
+        Dictionary<int, List<(CompoScript, int)>> paths = new Dictionary<int, List<(CompoScript, int)>>();
+        HashSet<(int, int, CompoScript)> power = new HashSet<(int, int, CompoScript)>();
+        for (int i = 0; i < bornes.Count; i++)
+        {
+            GameObject a = bornes[i].Item1.transform.parent.gameObject;
+            for (int j = i + 1; j < bornes.Count; j++)
+                if (a.Equals(bornes[j].Item1.transform.parent.gameObject))
+                {
+                    CompoScript b = a.GetComponent<CompoScript>();
+                    if (bornes[i].Item2 == bornes[j].Item2)
                     {
-                        CompoScript b = a.GetComponent<CompoScript>();
-                        if (bornes[i].Item2 == bornes[j].Item2)
-                        {
-                            if (b.isPower) b.Activate();
-                            b.Deactivate();
-                        }
+                        if (b.isPower) b.Explode();
+                    }
+                    else
+                    {
+                        int k = bornes[i].Item2, l = bornes[j].Item2;
+                        if (bornes[i].Item1.name.Equals("BorneP")) { int t = k; k = l; l = t; }
+                        if (b.isPower) power.Add((k, l, b));
                         else
                         {
-                            int k = bornes[i].Item2, l = bornes[j].Item2;
-                            if (bornes[i].Item1.name.Equals("BorneP")) { int t =k ; k = l; l = t; }
-                            if (b.isPower) power.Add((k, l, b));
-                            else
+                            if (!b.blockPtoM)
                             {
                                 if (!paths.ContainsKey(k)) paths[k] = new List<(CompoScript, int)>();
                                 paths[k].Add((b, l));
-                                if (!b.isSenseSensitive) {
-                                    if (!paths.ContainsKey(l)) paths[l] = new List<(CompoScript, int)>();
-                                    paths[l].Add((b, k));
-                                } 
+                            }
+                            if (!b.blockMtoP)
+                            {
+                                if (!paths.ContainsKey(l)) paths[l] = new List<(CompoScript, int)>();
+                                paths[l].Add((b, k));
                             }
                         }
                     }
-            }
-            foreach (var a in power)
-            {
-                if (SearchPath(new List<int>(), a.Item1, a.Item2, paths)) a.Item3.Activate();
-                else a.Item3.Deactivate();
-            }
+                }
+        }
+        foreach (var a in power)
+        {
+            if (SearchPath(new List<int>(), a.Item1, a.Item2, paths)) a.Item3.Activate();
+            else a.Item3.Deactivate();
         }
     }
 

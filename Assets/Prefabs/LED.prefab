@@ -753,6 +753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPower: 0
-  isSenseSensitive: 1
+  blockMtoP: 1
+  blockPtoM: 0
   LampOn: {fileID: 2100000, guid: 35c759b0081187a4cbaa8e277196129d, type: 2}
   LampOff: {fileID: 2100000, guid: 40f82f5ebe1897f4ab5c7e306d665102, type: 2}

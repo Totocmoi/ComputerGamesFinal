@@ -60,10 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ComponentSpecificScripts\CompoScript.cs" />
+    <Compile Include="Assets\Scripts\ComponentSpecificScripts\FlipFlopScript.cs" />
     <Compile Include="Assets\Scripts\ComponentSpecificScripts\UselessScript.cs" />
     <Compile Include="Assets\Scripts\ComponentButtonScript.cs" />
     <Compile Include="Assets\Scripts\CableManager.cs" />
     <Compile Include="Assets\Scripts\ComponentSpecificScripts\LampScript.cs" />
+    <Compile Include="Assets\Scripts\ComponentSpecificScripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\BorneScript.cs" />
     <Compile Include="Assets\Scripts\ComponentSpecificScripts\BatteryScript.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />

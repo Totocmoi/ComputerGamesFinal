@@ -357,7 +357,9 @@
 "Assets/Scripts/CameraScript.cs"
 "Assets/Scripts/ComponentButtonScript.cs"
 "Assets/Scripts/ComponentSpecificScripts/BatteryScript.cs"
+"Assets/Scripts/ComponentSpecificScripts/ButtonScript.cs"
 "Assets/Scripts/ComponentSpecificScripts/CompoScript.cs"
+"Assets/Scripts/ComponentSpecificScripts/FlipFlopScript.cs"
 "Assets/Scripts/ComponentSpecificScripts/LampScript.cs"
 "Assets/Scripts/ComponentSpecificScripts/UselessScript.cs"
 -langversion:9.0

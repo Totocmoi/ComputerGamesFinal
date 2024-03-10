@@ -21,11 +21,11 @@ public class Battery : CompoScript
     }
     public override void Deactivate()  
     {
-        if (isActive)
-        {
-            explosion.Play();
-            source.PlayOneShot(boom, 1);
-            isActive = false;
-        }
+        isActive = false;
+    }
+    public override void Explode()
+    {
+        explosion.Play();
+        source.PlayOneShot(boom, 1);
     }
 }
